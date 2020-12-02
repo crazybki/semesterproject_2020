@@ -1,0 +1,67 @@
+* {
+    color: $txt-color;
+}
+
+body {
+    background-image: url(/images/white-walker-5739181_1920.jpg);
+}
+
+
+/*Intro txt - fade out*/
+.pageintro {
+    text-align: center;
+
+    .pageintro-heading {
+        text-transform: uppercase;
+    }
+
+    .pageintro-txt {
+        font-size: $heading2;
+        animation: fadeinout 11s linear 1 forwards;
+    }
+}
+
+
+@keyframes fadeinout {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+/*Intro txt - fade out*/
+
+
+
+
+/*Mission txt*/
+.mission {
+    max-width: 900px;
+    margin: 0 auto;   
+}
+
+/*Mission txt*/
+
+/**/
+.mission-btn {
+    color: $main-color;
+}
+
+.containercharacters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.characters_flag {
+     cursor: pointer; 
+     margin: 0 20px 0 20px;     
+}
+
+.characters_flag:hover {
+    color: blue;
+}
+
+
+
+
+
