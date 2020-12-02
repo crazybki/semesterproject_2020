@@ -17,11 +17,14 @@ function missionStatement() {
 
 missionStatement();
 
-//Btn for choosing characters
+//Elements for choosing characters
 const charactersVimpels = document.querySelector('.container_charactherflags');
 const characters = document.querySelector('.container_characters');
-const test="hello";
 const missionBtn = document.querySelector('.mission-btn');
+
+/**When clicking the button characters and flags of families appears
+ * It also removes the former html and button. Gets the info from got_JSON file
+ */
 
 missionBtn.addEventListener('click', chooseCharacters);
 
