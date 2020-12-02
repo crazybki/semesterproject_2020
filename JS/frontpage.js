@@ -20,7 +20,7 @@ missionStatement();
 //Btn for choosing characters
 const charactersVimpels = document.querySelector('.container_charactherflags');
 const characters = document.querySelector('.container_characters');
-
+const test="hello";
 const missionBtn = document.querySelector('.mission-btn');
 
 missionBtn.addEventListener('click', chooseCharacters);
