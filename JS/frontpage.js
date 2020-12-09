@@ -1,46 +1,44 @@
-import { gotCharacters } from "/JS/got_JSON.js";
-
-const heroPage = document.querySelector('.mission');
+import { getCharacters } from "/JS/got_JSON.js";
 
 
-function missionStatement() {
-    heroPage.innerHTML = `<p>Winter is coming! You have been chosen to warn the kingdoms, 
-                             that the winter king is coming. You must reach the destination before the hordes 
-                             of the winter zombies reaches the kingdoms before you.</p>
+const getCharaterFaces = document.querySelector('.container_characters');
+const face = document.querySelector('.chosenFace');
 
-                            <p>Be aware! The path to the kingdoms is long and dangerous. 
-                            There will be challenges on the way, you must resolve quick and fast or go back, 
-                            and rethink your strategy.We are all depending upon you.</p>
-                            
-                          <p>Are you ready?</p>`
-}
+getCharacters.forEach(element => {
+    getCharaterFaces.innerHTML += `<img class="face-images" data-id="${element.Id}" data-name="${element.Name}" src="${element.image}">`
+});
 
-missionStatement();
 
-//Elements for choosing characters
-const charactersVimpels = document.querySelector('.container_charactherflags');
-const characters = document.querySelector('.container_characters');
-const missionBtn = document.querySelector('.mission-btn');
 
-/**When clicking the button characters and flags of families appears
- * It also removes the former html and button. Gets the info from got_JSON file
- */
 
-missionBtn.addEventListener('click', chooseCharacters);
 
-function chooseCharacters() {
+const images = document.querySelectorAll('.face-images');
 
-    heroPage.innerHTML = ``;
-    missionBtn.remove();
+images.forEach(buttons => {
+    buttons.addEventListener('click', characterIsChosen)
+});
 
-    gotCharacters.forEach(element => {
 
-        characters.innerHTML += `<img src="${element.image}">`
+function characterIsChosen() {
+    const img = this.src;
+    const imgUrl = img.slice(21,60)
+    let name = this.dataset.name    
 
-        if ( element.charactherFlag !== null) {
-            return charactersVimpels.innerHTML += `<img class="characters_flag" src="${element.charactherFlag}">`;
+    let arr = [name, imgUrl]
+    console.log(arr)
+
+
+    
+    let storeCharacther = localStorage.setItem('url', JSON.stringify(arr));
+    face.innerHTML = `<p>You chose ${name}</p>`
+
+
+
+    setTimeout(() => {
+
+        if(storeCharacther !== null) {
+            location.href = "/html/games.html";
         }
-        console.log(element.image);
-    });
-}
+    }, 4000);
 
+};

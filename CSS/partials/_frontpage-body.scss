@@ -45,23 +45,23 @@ body {
     color: $main-color;
 }
 
-.containercharacters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
+
+.container_charactherflags {
+    display:grid;
+    grid-auto-flow: column;
+    justify-items: center;
+
+
 }
 
+.container_characters{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
 
 .characters_flag {
-     cursor: pointer; 
-     margin: 0 20px 0 20px;     
+    width: 60%;
 }
-
-.characters_flag:hover {
-    color: blue;
-}
-
-
-
-
 
