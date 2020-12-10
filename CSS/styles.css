@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url(/images/white-walker-5739181_1920.jpg);
+  background-color: #303A40;
 }
 
 /*Intro txt - fade out*/
@@ -21,63 +21,21 @@ body {
 
 .pageintro .pageintro-txt {
   font-size: 36px;
-  -webkit-animation: fadeinout 11s linear 1 forwards;
-          animation: fadeinout 11s linear 1 forwards;
-}
-
-@-webkit-keyframes fadeinout {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeinout {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-/*Intro txt - fade out*/
-/*Mission txt*/
-.mission {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/*Mission txt*/
-/**/
-.mission-btn {
-  color: #0F2033;
-}
-
-.container_charactherflags {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-flow: column;
-  justify-items: center;
 }
 
 .container_characters {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  justify-items: center;
-}
-
-.characters_flag {
-  width: 60%;
+  /* 1 */
+  -ms-grid-columns: (10px)[5];
+      grid-template-columns: repeat(5, 10px);
+  /* 2 */
+  grid-auto-rows: 90px;
+  /* 3 */
+  grid-gap: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* 4 */
 }
 /*# sourceMappingURL=styles.css.map */

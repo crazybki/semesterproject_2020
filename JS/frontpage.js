@@ -5,7 +5,9 @@ const getCharaterFaces = document.querySelector('.container_characters');
 const face = document.querySelector('.chosenFace');
 
 getCharacters.forEach(element => {
-    getCharaterFaces.innerHTML += `<img class="face-images" data-id="${element.Id}" data-name="${element.Name}" src="${element.image}">`
+    getCharaterFaces.innerHTML += `<div>
+                                        <img class="face-images" data-id="${element.Id}" data-name="${element.Name}" src="${element.image}">
+                                    </div>`
 });
 
 
@@ -21,16 +23,16 @@ images.forEach(buttons => {
 
 function characterIsChosen() {
     const img = this.src;
-    const imgUrl = img.slice(21,60)
-    let name = this.dataset.name    
+    const imgUrl = img.slice(21,60);
+    let name = this.dataset.name;    
 
-    let arr = [name, imgUrl]
+    let arr = [name, imgUrl];
     console.log(arr)
 
 
     
     let storeCharacther = localStorage.setItem('url', JSON.stringify(arr));
-    face.innerHTML = `<p>You chose ${name}</p>`
+    face.innerHTML = `<p>You chose ${name}</p>`;
 
 
 
