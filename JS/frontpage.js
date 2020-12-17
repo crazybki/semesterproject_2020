@@ -54,7 +54,7 @@ function characterIsChosen() {
             gameStarting();
             setTimeout(() => {
                 window.location.href = "/html/games.html";
-            }, 11000);
+            }, 30000);
         }
     }
 };
