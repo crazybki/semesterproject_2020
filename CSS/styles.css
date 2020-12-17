@@ -4,6 +4,8 @@
 /*Font sizes*/
 * {
   color: #FFF;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -23,19 +25,46 @@ body {
   font-size: 36px;
 }
 
+.containercharacters {
+  margin: 0 90px 0 0;
+}
+
 .container_characters {
   display: -ms-grid;
   display: grid;
-  /* 1 */
-  -ms-grid-columns: (10px)[5];
-      grid-template-columns: repeat(5, 10px);
-  /* 2 */
-  grid-auto-rows: 90px;
-  /* 3 */
-  grid-gap: 150px;
+  -ms-grid-columns: (5px)[5];
+      grid-template-columns: repeat(5, 5px);
+  grid-auto-rows: 100px;
+  grid-gap: 200px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  /* 4 */
+}
+
+.chosenCharaters {
+  height: 280px;
+  margin: 0 0 60px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.chosenCharaters #chosenFace {
+  -ms-flex-preferred-size: 45%;
+      flex-basis: 45%;
+}
+
+.chosenCharaters #opponent {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+
+.chosenCharaters .player1 {
+  padding: 0 0 0 43px;
 }
 /*# sourceMappingURL=styles.css.map */
