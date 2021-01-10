@@ -1,0 +1,91 @@
+.boardcontainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boardcontainer__playerimg {
+    display: flex;
+    justify-content: space-between;
+}
+
+.boardcontainer-images1 {
+    display: inline-block;
+    order: 1;
+}
+
+.boardcontainer-images2 {
+    display: inline-block;
+    order: 2;
+}
+
+#player1{
+    margin: 0 0 0 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+ 
+.container__gridhorizontal2 {
+    @extend .container;
+    clear: right;
+    flex-direction: row-reverse;
+}
+
+.container__gridhorizontal {
+    @extend .container;
+    clear: left;
+
+}
+
+.container__gridvertically {
+    float: right;
+    & #grid_11 {
+        height: 180px;
+        position: relative;
+        right: 243px;
+    }
+}
+
+.container__gridverticallyleft {
+    float: left;
+    & #grid_22 { 
+        height: 180px;
+        position: relative;
+        left: 243px;
+    }
+}
+
+.gridcell {
+  background-color: #f1f1f1;
+  width: 120px;
+  margin: 10px;
+  height: 120px;
+}
+
+
+
+
+
+
+#btn_dice {
+    height: 35px;
+}
+
+#btn_dice2 {
+    @extend #btn_dice;
+}
+
+.message {
+    height: 50px;
+    margin: 30px 0 30px 0;
+}
+
+.message-txt {
+    padding: 20px;
+}
+
+.winner {
+    color: black;
+}
