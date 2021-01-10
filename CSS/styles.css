@@ -3,7 +3,6 @@
 /*Font sizes*/
 /*Font sizes*/
 * {
-  color: #FFF;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -12,29 +11,82 @@ body {
   background-color: #303A40;
 }
 
-/*Intro txt - fade out*/
+/********FRONT-PAGE - Message and counter*****************/
+.container_intro {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.introtxt {
+  text-align: center;
+}
+
+.containerbtn {
+  text-align: center;
+}
+
 .pageintro {
   text-align: center;
 }
 
 .pageintro .pageintro-heading {
   text-transform: uppercase;
+  font-size: 48px;
+  color: #FFF;
 }
 
-.pageintro .pageintro-txt {
+.pageintro-msg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 90px;
+  text-transform: uppercase;
+  font-size: 32px;
+  color: #FFF;
+}
+
+.introtxt__head2 {
   font-size: 36px;
+  text-transform: uppercase;
+  color: #FFF;
 }
 
+.introtxt__message {
+  font-size: 21px;
+  color: #FFF;
+}
+
+.introtxt__charactherchosen {
+  font-size: 32px;
+  color: #FFF;
+}
+
+.chosenCharaters-countdown {
+  position: relative;
+}
+
+.chosenCharaters-countdown .counter {
+  font-size: 32px;
+  color: #FFF;
+  position: absolute;
+  right: -180px;
+  top: 80px;
+  width: 250px;
+}
+
+/********FRONT-PAGE - Message and counter*****************/
+/********FRONT-PAGE - Characters*****************/
 .containercharacters {
-  margin: 0 90px 0 0;
+  margin: 60px 100px 0 0;
 }
 
-.container_characters {
+.container__characters {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (5px)[5];
-      grid-template-columns: repeat(5, 5px);
-  grid-auto-rows: 100px;
+  -ms-grid-columns: (20px)[5];
+      grid-template-columns: repeat(5, 20px);
+  grid-auto-rows: 200px;
   grid-gap: 200px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -43,32 +95,140 @@ body {
 
 .face-images {
   cursor: pointer;
+  opacity: .7;
+  -webkit-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+  -webkit-box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
+}
+
+.face-images:hover {
+  opacity: 1;
+}
+
+.face-names {
+  font-size: 21px;
+  color: #FFF;
+  margin: 20px 20px 0 20px;
 }
 
 .chosenCharaters {
   height: 280px;
-  margin: 0 0 60px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-right: 100px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.chosencharacters_player1, .chosencharacters_player2 {
+  display: inline-block;
+  position: absolute;
+}
+
+/********FRONT-PAGE*****************/
+/********FOOTER*****************/
+.boardcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.boardcontainer__playerimg {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.boardcontainer-images1 {
+  display: inline-block;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.boardcontainer-images2 {
+  display: inline-block;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+#player1 {
+  margin: 0 0 0 20px;
+}
+
+.container, .container__gridhorizontal2, .container__gridhorizontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.chosenCharaters #chosenFace {
-  -ms-flex-preferred-size: 45%;
-      flex-basis: 45%;
+.container__gridhorizontal2 {
+  clear: right;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
-.chosenCharaters #opponent {
-  -ms-flex-preferred-size: 10%;
-      flex-basis: 10%;
+.container__gridhorizontal {
+  clear: left;
 }
 
-.chosenCharaters .player1 {
-  padding: 0 0 0 43px;
+.container__gridvertically {
+  float: right;
+}
+
+.container__gridvertically #grid_11 {
+  height: 180px;
+  position: relative;
+  right: 243px;
+}
+
+.container__gridverticallyleft {
+  float: left;
+}
+
+.container__gridverticallyleft #grid_22 {
+  height: 180px;
+  position: relative;
+  left: 243px;
+}
+
+.gridcell {
+  background-color: #f1f1f1;
+  width: 120px;
+  margin: 10px;
+  height: 120px;
+}
+
+#btn_dice, #btn_dice2 {
+  height: 35px;
+}
+
+.message {
+  height: 50px;
+  margin: 30px 0 30px 0;
+}
+
+.message-txt {
+  padding: 20px;
+}
+
+.winner {
+  color: black;
 }
 /*# sourceMappingURL=styles.css.map */

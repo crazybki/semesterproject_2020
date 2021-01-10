@@ -1,20 +1,46 @@
 import { getCharacters } from "/JS/got_JSON.js";
 
-let storeImg = [];
-const getCharaterFaces = document.querySelector('.container_characters');
+
+const getCharaterFaces = document.querySelector('.container__characters');
 const face = document.querySelector('#chosenFace');
 const opponents = document.querySelector('#opponent');
 const counterElement = document.querySelector('.chosenCharaters-countdown');
+const introElement = document.querySelector('.introtxt');
+const chooseCharacterElement = document.querySelector('.pageintro-txt');
+
+//
+let storeImg = [];
 let counter = 10;
 let characterChosen = false;
 let starting = false;
 
 
 
+//Function for intro txt
 
+function infoAboutGame() {
+    introElement.innerHTML = `<h2 class="introtxt__head2">Winter is coming!</h2> 
+                              <p class="introtxt__message">Your mission is to take the iron throne
+                              in the Red Keep. You must arrive before your opponent to the 
+                              throne.</p> 
+                              <p class="introtxt__message">The road is dangerous and treacherous, so be carefull, and 
+                              look out for traps.</p>
+                              <p class="introtxt__charactherchosen">Choose your charachter</p>`
+}
+
+infoAboutGame();
+
+
+
+
+
+
+// Retrieving all characthers for the gamer to choose from
 getCharacters.forEach(element => {
-    getCharaterFaces.innerHTML += `<div>
-                                        <img class="face-images" data-id="${element.Id}" data-name="${element.Name}" src="${element.image}">
+    getCharaterFaces.innerHTML += `<div class="face__card">
+                                        <img class="face-images" data-gamepawn="${element.pawn}" 
+                                        data-name="${element.Name}" src="${element.image}">
+                                        <p class="face-names">${element.Name}</p>
                                     </div>`;
 });
 
@@ -38,39 +64,44 @@ function characterIsChosen() {
         let img = this.src;
         let imgUrl = img.slice(21, 60);
         let name = this.dataset.name;
+        let game_piece = this.dataset.gamepawn;
 
-        let arr = { name: name, image: imgUrl }
+        let arr = { name: name, image: imgUrl, gamePawn: game_piece };
 
-        storeImg.push(arr)
+        storeImg.push(arr);
+        console.log(storeImg);
+
+        introElement.remove();
+        chooseCharacterElement.innerHTML = `<p class="pageintro-msg">vs</p>`
 
         localStorage.setItem('character', JSON.stringify(storeImg));
 
         if (!characterChosen) {
-            seeChosenCharacter(img, name);
+            player1Chosen(img, name);
             characterChosen = true;
         } else {
             starting = true;
-            displayOpponent(img, name);
+            player2Chosen(img, name);
             gameStarting();
             setTimeout(() => {
                 window.location.href = "/html/games.html";
-            }, 30000);
+            }, 12000);
         }
     }
 };
 
 
-function seeChosenCharacter(image, nameOfcharacter) {
-    face.innerHTML = `<div class="player1">
-                                    <img src="${image}">
-                                    <p>You chose ${nameOfcharacter}</p>
+function player1Chosen(image, nameOfcharacter) {
+    face.innerHTML = `<div class="chosencharacters_player1">
+                                    <img class="player1" src="${image}">
+                                    <p>${nameOfcharacter}</p>
                           </div>`;
 };
 
-function displayOpponent(image, nameOfcharacter) {
-    opponents.innerHTML = `<div class="player2">
-                                    <img src="${image}">
-                                    <p>Your opponent ${nameOfcharacter}</p>
+function player2Chosen(image, nameOfcharacter) {
+    opponents.innerHTML = `<div class="chosencharacters_player2">
+                                    <img class="player2" src="${image}">
+                                    <p>${nameOfcharacter}</p>
                           </div>`;
 };
 
@@ -80,10 +111,10 @@ function gameStarting() {
     const countDown = setInterval(() => {
         if (counter <= 0) {
             clearInterval(countDown)
-            counterElement.innerHTML = `<p>Games begin</p>`;
+
         } else {
             counter--;
-            counterElement.innerHTML = `<span>${counter}</span>`;
+            counterElement.innerHTML = `<span class="counter"> Game begins in ${counter}</span>`;
         }
 
     }, 1000);

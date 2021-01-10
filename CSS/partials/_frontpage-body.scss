@@ -1,5 +1,4 @@
 * {
-    color: $txt-color;
     box-sizing: border-box;
 }
 
@@ -7,57 +6,135 @@ body {
     background-color: $background-color;
 }
 
+/********FRONT-PAGE - Message and counter*****************/
 
-/*Intro txt - fade out*/
+
+.container_intro {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.introtxt {
+    text-align: center;
+}
+
+.containerbtn {
+    text-align: center;
+}
+
 .pageintro {
     text-align: center;
 
     .pageintro-heading {
         text-transform: uppercase;
-    }
-
-    .pageintro-txt {
-        font-size: $heading2;
+        font-size: $heading1;
+        color: $txt-color;
     }
 }
+
+
+.pageintro-msg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 90px;
+    text-transform: uppercase;
+    font-size: $heading3;
+    color: $txt-color;
+}
+
+.introtxt__head2 {
+    font-size: $heading2;
+    text-transform: uppercase;
+    color: $txt-color;
+}
+
+.introtxt__message {
+   font-size: $bodytxt;
+   color: $txt-color;
+}
+
+.introtxt__charactherchosen {
+    font-size: $heading3;
+   color: $txt-color;
+}
+
+
+.chosenCharaters-countdown {
+    position: relative;
+    & .counter {
+        font-size: $heading3;
+        color: $txt-color;
+        position: absolute;
+        right: -180px;
+        top: 80px;
+        width: 250px;
+    }
+}
+
+
+/********FRONT-PAGE - Message and counter*****************/
+
+
+
+/********FRONT-PAGE - Characters*****************/
+
+
+
 
 .containercharacters {
-    margin: 0 90px 0 0;
+    margin: 60px 100px 0 0;
 }
 
-.container_characters {
+.container__characters {
     display: grid;                            
-    grid-template-columns: repeat(5, 5px);   
-    grid-auto-rows: 100px;                     
+    grid-template-columns: repeat(5, 20px);   
+    grid-auto-rows: 200px;                     
     grid-gap: 200px; 
     justify-content: center;                      
 }
 
 .face-images {
     cursor: pointer;
+    opacity: .7;
+    transition: opacity .5s ease-in-out;
+    box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.60);
+}
+
+.face-images:hover {
+    opacity: 1;
+}
+
+.face-names {
+    font-size: $bodytxt;
+    color: $txt-color;
+    margin: 20px 20px 0 20px;
 }
 
 .chosenCharaters {
     height: 280px;
-    margin: 0 0 60px 0;
     display: flex;
+    margin-right: 100px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+}
 
+.chosencharacters_player1 {
+    display: inline-block;
+    position: absolute;
+}
 
-    #chosenFace {
-        flex-basis: 45%;
-    } 
-
-    #opponent {
-        flex-basis: 10%;
-    }
-
-    .player1 {
-        padding: 0 0 0 43px;
-    }
+.chosencharacters_player2 {
+    @extend .chosencharacters_player1;
 }
 
 
 
 
+
+
+
+/********FRONT-PAGE*****************/
+
+/********FOOTER*****************/
