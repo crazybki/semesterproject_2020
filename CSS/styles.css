@@ -5,6 +5,8 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -12,22 +14,13 @@ body {
 }
 
 /********FRONT-PAGE - Message and counter*****************/
-.container_intro {
-  position: absolute;
-  left: 0;
-  right: 0;
-}
-
-.introtxt {
-  text-align: center;
-}
-
 .containerbtn {
   text-align: center;
 }
 
 .pageintro {
   text-align: center;
+  margin: 40px 0 20px 0;
 }
 
 .pageintro .pageintro-heading {
@@ -46,20 +39,33 @@ body {
   color: #FFF;
 }
 
+.container_intro {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.container_intro .introtxt {
+  text-align: center;
+}
+
 .introtxt__head2 {
   font-size: 36px;
   text-transform: uppercase;
   color: #FFF;
+  margin: 20px 0 40px 0;
 }
 
 .introtxt__message {
   font-size: 21px;
   color: #FFF;
+  margin: 0 0 10px 0;
 }
 
 .introtxt__charactherchosen {
   font-size: 32px;
   color: #FFF;
+  margin: 40px 0 0 0;
 }
 
 .chosenCharaters-countdown {
@@ -84,10 +90,10 @@ body {
 .container__characters {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (20px)[5];
-      grid-template-columns: repeat(5, 20px);
-  grid-auto-rows: 200px;
-  grid-gap: 200px;
+  -ms-grid-columns: (15px)[5];
+      grid-template-columns: repeat(5, 15px);
+  grid-auto-rows: 180px;
+  grid-gap: 250px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -95,21 +101,21 @@ body {
 
 .face-images {
   cursor: pointer;
-  opacity: .7;
-  -webkit-transition: opacity .5s ease-in-out;
-  transition: opacity .5s ease-in-out;
+  opacity: 1;
   -webkit-box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
           box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
 }
 
-.face-images:hover {
-  opacity: 1;
+.face__card {
+  position: relative;
 }
 
 .face-names {
   font-size: 21px;
   color: #FFF;
-  margin: 20px 20px 0 20px;
+  display: inline-block;
+  width: 230px;
+  padding: 20px 45px 0 0;
 }
 
 .chosenCharaters {

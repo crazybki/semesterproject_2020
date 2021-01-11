@@ -19,6 +19,8 @@ diceBtnMachine.disabled = true;
 //Sounds
 const rolledSixSound = new Audio('/sounds/playerRolled6.wav')
 const playerWinsGame = new Audio('/sounds/playerwin.wav');
+const gotTheme = new Audio('/sounds/GOT_theme.mp3');
+
 //Starting position for players
 let player1Postion = 1;
 let player2Postion = 1;
@@ -30,8 +32,17 @@ const gridTile = ['#grid_6', '#grid_10', '#grid_15', '#grid_20', '#grid_29'];
 
 //
 window.addEventListener('load', (event) => {
-    diceEl.innerHTML = `<img src="/images/1x/dice1_1.png">`;
-    diceEl2.innerHTML = `<img src="/images/1x/dice2_1.png">`;
+    async function loader() {
+        try {
+            gotTheme.play();
+            diceEl.innerHTML = `<img src="/images/1x/dice1_1.png">`;
+            diceEl2.innerHTML = `<img src="/images/1x/dice2_1.png">`;
+        }
+        catch (error) {
+            console.log('Error has accoured')
+        }
+    }
+    loader()
 });
 
 

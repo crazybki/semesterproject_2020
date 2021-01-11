@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -9,22 +11,13 @@ body {
 /********FRONT-PAGE - Message and counter*****************/
 
 
-.container_intro {
-    position: absolute;
-    left: 0;
-    right: 0;
-}
-
-.introtxt {
-    text-align: center;
-}
-
 .containerbtn {
     text-align: center;
 }
 
 .pageintro {
     text-align: center;
+    margin: 40px 0 20px 0;
 
     .pageintro-heading {
         text-transform: uppercase;
@@ -44,20 +37,33 @@ body {
     color: $txt-color;
 }
 
+
+.container_intro {
+    position: absolute;
+    left: 0;
+    right: 0;
+    & .introtxt {
+        text-align: center;
+    }
+}
+
 .introtxt__head2 {
     font-size: $heading2;
     text-transform: uppercase;
     color: $txt-color;
+    margin: 20px 0 40px 0;
 }
 
 .introtxt__message {
    font-size: $bodytxt;
    color: $txt-color;
+   margin: 0 0 10px 0;
 }
 
 .introtxt__charactherchosen {
     font-size: $heading3;
-   color: $txt-color;
+    color: $txt-color;
+    margin: 40px 0 0 0;
 }
 
 
@@ -89,28 +95,31 @@ body {
 
 .container__characters {
     display: grid;                            
-    grid-template-columns: repeat(5, 20px);   
-    grid-auto-rows: 200px;                     
-    grid-gap: 200px; 
+    grid-template-columns: repeat(5, 15px);   
+    grid-auto-rows: 180px;                     
+    grid-gap: 250px; 
     justify-content: center;                      
 }
 
 .face-images {
     cursor: pointer;
-    opacity: .7;
-    transition: opacity .5s ease-in-out;
+    opacity: 1;
     box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.60);
 }
 
-.face-images:hover {
-    opacity: 1;
+.face__card {
+    position: relative;
 }
+
 
 .face-names {
     font-size: $bodytxt;
     color: $txt-color;
-    margin: 20px 20px 0 20px;
+    display: inline-block;
+    width: 230px;
+    padding: 20px 45px 0 0;
 }
+
 
 .chosenCharaters {
     height: 280px;
