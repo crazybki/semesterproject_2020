@@ -137,40 +137,49 @@ body {
 
 /********FRONT-PAGE*****************/
 /********FOOTER*****************/
+/* -------------Player img, dices, buttons and trap txt----------------*/
 .boardcontainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 2fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
 }
 
-.boardcontainer__playerimg {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.boardcontainer__player1 {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 3;
+  justify-items: end;
 }
 
-.boardcontainer-images1 {
-  display: inline-block;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+.boardcontainer__player2 {
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-end: 4;
+  justify-items: center;
 }
 
-.boardcontainer-images2 {
-  display: inline-block;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+/* -------------Player img, dices, buttons and trap txt----------------*/
+/* --------Gridcells-------------*/
+#player1, #player2 {
+  margin: 0 0 0 30px;
+  z-index: 10;
+  -ms-grid-row: 1;
+  grid-area: 1;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
-#player1 {
-  margin: 0 0 0 20px;
+#player2 {
+  margin: 20px 0 0 30px;
+}
+
+.player1pawn {
+  display: block;
+}
+
+.player2pawn {
+  display: block;
 }
 
 .container, .container__gridhorizontal2, .container__gridhorizontal {
@@ -195,32 +204,51 @@ body {
 }
 
 .container__gridvertically {
-  float: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.container__gridvertically #grid_11 {
-  height: 180px;
-  position: relative;
-  right: 243px;
-}
-
-.container__gridverticallyleft {
-  float: left;
-}
-
-.container__gridverticallyleft #grid_22 {
-  height: 180px;
-  position: relative;
-  left: 243px;
-}
-
-.gridcell {
-  background-color: #f1f1f1;
-  width: 120px;
-  margin: 10px;
+.container__gridvertically .tile {
+  width: 181px;
+  margin: 3px;
   height: 120px;
 }
 
+.container__gridverticallyleft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.container__gridverticallyleft .container__lefttile {
+  width: 181px;
+  margin: 3px;
+  height: 120px;
+}
+
+.gridcell {
+  background-color: #c0c0c0;
+  width: 160px;
+  margin: 3px;
+  height: 120px;
+}
+
+.gridcell__colorred {
+  background-color: #6E080D;
+}
+
+/* --------Gridcells-------------*/
 #btn_dice, #btn_dice2 {
   height: 35px;
 }
@@ -236,5 +264,17 @@ body {
 
 .winner {
   color: black;
+}
+
+.castle {
+  position: absolute;
+  bottom: 0;
+}
+
+.gridcell__invisible {
+  background-color: transparent;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
 }
 /*# sourceMappingURL=styles.css.map */

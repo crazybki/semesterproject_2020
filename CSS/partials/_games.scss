@@ -1,25 +1,45 @@
+
+/* -------------Player img, dices, buttons and trap txt----------------*/
 .boardcontainer {
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
 }
 
-.boardcontainer__playerimg {
-    display: flex;
-    justify-content: space-between;
+.boardcontainer__player1 {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    justify-items: end;
 }
 
-.boardcontainer-images1 {
-    display: inline-block;
-    order: 1;
+.boardcontainer__player2 {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    justify-items: center;
 }
+/* -------------Player img, dices, buttons and trap txt----------------*/
 
-.boardcontainer-images2 {
-    display: inline-block;
-    order: 2;
-}
+
+
+/* --------Gridcells-------------*/
 
 #player1{
-    margin: 0 0 0 20px;
+    margin: 0 0 0 30px;
+    z-index: 10;
+    grid-area: 1;
+    justify-self: center;
+}
+
+#player2 {
+    @extend #player1;
+    margin: 20px 0 0 30px;
+}
+
+.player1pawn {
+    display: block;
+}
+
+.player2pawn {
+    display: block;
 }
 
 .container {
@@ -40,33 +60,38 @@
 }
 
 .container__gridvertically {
-    float: right;
-    & #grid_11 {
-        height: 180px;
-        position: relative;
-        right: 243px;
+    display: flex;
+    justify-content: center;
+    & .tile {
+        width: 181px;
+        margin: 3px;
+        height: 120px;
     }
 }
 
 .container__gridverticallyleft {
-    float: left;
-    & #grid_22 { 
-        height: 180px;
-        position: relative;
-        left: 243px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    & .container__lefttile {
+        width: 181px;
+        margin: 3px;
+        height: 120px;
     }
 }
 
 .gridcell {
-  background-color: #f1f1f1;
-  width: 120px;
-  margin: 10px;
+  background-color: $gridcell-color;
+  width: 160px;
+  margin: 3px;
   height: 120px;
 }
 
+.gridcell__colorred {
+    background-color: $gridcell-red;
+}
 
-
-
+/* --------Gridcells-------------*/
 
 
 #btn_dice {
@@ -89,3 +114,15 @@
 .winner {
     color: black;
 }
+
+.castle {
+    position: absolute;
+    bottom: 0;
+}
+
+.gridcell__invisible {
+    background-color: transparent;
+    position: relative;
+    display: grid;
+}
+

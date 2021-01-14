@@ -3,7 +3,7 @@ import { getCharacters } from "/JS/got_JSON.js";
 const listOfCharacters = getCharacters;
 
 //Storing the images chosen from user
-const playerImg = document.querySelector('.boardcontainer__playerimg');
+const playerImg = document.querySelector('.boardcontainer');
 
 
 //Get button, for dices and for players
@@ -12,6 +12,10 @@ const diceBtnMachine = document.querySelector('#btn_dice2');
 const diceEl = document.querySelector('#dice1');
 const diceEl2 = document.querySelector('#dice2');
 const player1 = document.querySelector('#player1');
+
+const movepawn = document.querySelector('.player1pawn');
+const movepawn1 = document.querySelector('.player2pawn');
+
 const player2 = document.querySelector('#player2');
 let trapMessage = document.querySelector('.message');
 diceBtnMachine.disabled = true;
@@ -34,7 +38,7 @@ const gridTile = ['#grid_6', '#grid_10', '#grid_15', '#grid_20', '#grid_29'];
 window.addEventListener('load', (event) => {
     async function loader() {
         try {
-            gotTheme.play();
+            // gotTheme.play();
             diceEl.innerHTML = `<img src="/images/1x/dice1_1.png">`;
             diceEl2.innerHTML = `<img src="/images/1x/dice2_1.png">`;
         }
@@ -56,11 +60,11 @@ function characterRetrived() {
     let faceRetrieved = localStorage.getItem('character');
     let infoAboutFaces = JSON.parse(faceRetrieved);
 
-    playerImg.innerHTML += `<div class="boardcontainer-images1">
+    playerImg.innerHTML += `<div class="boardcontainer__player1">
                                 <img src="${infoAboutFaces[0].image}">
                                 <p>${infoAboutFaces[0].name}</p>
                             </div>
-                            <div class="boardcontainer-images2S">
+                            <div class="boardcontainer__player2">
                                 <img src="${infoAboutFaces[1].image}">
                                 <p>${infoAboutFaces[1].name}</p>
                             </div>`;
@@ -77,7 +81,6 @@ characterRetrived();
 diceBtnPlayer.addEventListener('click', rollDice);
 diceBtnMachine.addEventListener('click', rollDiceMachine);
 
-
 function rollDice(e) {
 
     e.preventDefault();
@@ -85,13 +88,15 @@ function rollDice(e) {
     diceEl.innerHTML = `<img src="/images/1x/dice1_${diceRoll}.png">`;
 
     if (rollDice) {
+
         diceBtnPlayer.disabled = true;
         diceBtnMachine.disabled = false;
     } else {
         diceBtnPlayer.disabled = true;
     }
+
     movePlayer1(diceRoll);
-    player1Rolled6(diceRoll)
+    player1Rolled6(diceRoll);
 };
 
 function rollDiceMachine(e) {
@@ -116,15 +121,16 @@ function movePlayer1(diceRoll) {
     player1Postion += diceRoll;
     let newGridId = '#grid_' + player1Postion;
 
-    if (player1Postion >= 31) {
-        document.querySelector('#grid_31').appendChild(player1);
+
+    if (player1Postion >= 32) {
+        document.querySelector('#grid_32').appendChild(player1);
         //window.location.href = "/html/winnerpage.html"
         console.log('Player 1 is the winner')
         playerWinsGame.play();
     } else {
         document.querySelector(newGridId).appendChild(player1);
     }
-    checkForTrapsP1(newGridId);
+    checkForTrapsP1(newGridId, player1Postion);
 };
 
 movePlayer1(0);
@@ -136,8 +142,8 @@ function movePlayer2(diceRoll2) {
     player2Postion += diceRoll2;
     let newGridId = '#grid_' + player2Postion;
 
-    if (player2Postion >= 31) {
-        document.querySelector('#grid_31').appendChild(player2);
+    if (player2Postion >= 32) {
+        document.querySelector('#grid_32').appendChild(player2);
         // window.location.href = "/html/winnerpage.html"
         console.log('player 2 is the winner');
         playerWinsGame.play();
@@ -153,9 +159,10 @@ movePlayer2(0);
 
 
 
-function checkForTrapsP1(updatedGridId) {
+function checkForTrapsP1(updatedGridId, pos) {
     let trap = gridTile.includes(updatedGridId);
-
+    let stepBack = pos - 2;
+    console.log(stepBack)
     if (trap) {
         trap1();
 
@@ -164,7 +171,7 @@ function checkForTrapsP1(updatedGridId) {
             originalState.appendChild(player1)
         }, 1800);
 
-        console.log('player1 ' + updatedGridId)
+
     }
 }
 
@@ -178,7 +185,7 @@ function checkForTrapsP2(updateTile) {
             player2Postion = 1
             originalState.appendChild(player2)
         }, 1800);
-        console.log('player2 ' + updateTile)
+
     }
 }
 
