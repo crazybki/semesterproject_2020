@@ -1,5 +1,7 @@
 /*Colors*/
 /*Colors*/
+/*Font-family*/
+/*Font-family*/
 /*Font sizes*/
 /*Font sizes*/
 * {
@@ -60,6 +62,9 @@ body {
   font-size: 21px;
   color: #FFF;
   margin: 0 0 10px 0;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .introtxt__charactherchosen {
@@ -72,7 +77,7 @@ body {
   position: relative;
 }
 
-.chosenCharaters-countdown .counter {
+.counter {
   font-size: 32px;
   color: #FFF;
   position: absolute;
@@ -135,28 +140,191 @@ body {
   position: absolute;
 }
 
+.chosencharacters__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.chosencharacter_opponent {
+  position: absolute;
+  top: 250px;
+  font-size: 21px;
+  color: #FFF;
+}
+
 /********FRONT-PAGE*****************/
 /********FOOTER*****************/
+/********FOOTER*****************/
+/********Tablets*****************/
+@media screen and (max-width: 1200px) {
+  .container__characters {
+    -ms-grid-columns: (15px)[2];
+        grid-template-columns: repeat(2, 15px);
+    grid-auto-rows: 180px;
+    grid-gap: 350px;
+  }
+}
+
+/********Tablets*****************/
+/********Phones*****************/
+@media screen and (max-width: 640px) {
+  .container__characters {
+    -ms-grid-columns: (15px)[2];
+        grid-template-columns: repeat(2, 15px);
+    grid-auto-rows: 180px;
+    grid-gap: 150px;
+  }
+  .containercharacters {
+    margin: 60px 90px 0 0;
+  }
+  .face-images {
+    width: 110px;
+  }
+  .pageintro .pageintro-heading {
+    font-size: 32px;
+  }
+  .introtxt__head2 {
+    font-size: 26px;
+  }
+  .introtxt__message {
+    font-size: 16px;
+    margin: 0 10px 0 20px;
+    text-align: start;
+    line-height: 25px;
+    width: 350px;
+  }
+  .introtxt__charactherchosen {
+    font-family: "cinzel";
+    font-size: 22px;
+  }
+  .player1, .player2 {
+    width: 110px;
+  }
+  .chosencharacter_opponent {
+    top: 360px;
+  }
+  .counter {
+    font-family: "cinzel";
+    font-size: 22px;
+    top: 270px;
+    padding: 0 0 0 20px;
+  }
+  .face-names {
+    width: 90px;
+    padding: 20px 0 0 0;
+    font-size: 16px;
+  }
+  .names {
+    width: 50px;
+  }
+  .pageintro-msg {
+    display: none;
+  }
+}
+
+/********Phones*****************/
 /* -------------Player img, dices, buttons and trap txt----------------*/
 .boardcontainer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 2fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  -ms-grid-columns: 1fr 2.5fr 1fr;
+      grid-template-columns: 1fr 2.5fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  justify-items: center;
+}
+
+.boardcontainer__playerimg {
+  -ms-grid-column: 2;
+  grid-column: 2 / 2;
 }
 
 .boardcontainer__player1 {
-  -ms-grid-column: 3;
-      grid-column-start: 3;
-  grid-column-end: 3;
-  justify-items: end;
+  display: inline-block;
+  margin: 50px 390px 0 0;
 }
 
 .boardcontainer__player2 {
-  -ms-grid-column: 4;
-      grid-column-start: 4;
-  grid-column-end: 4;
-  justify-items: center;
+  display: inline-block;
+}
+
+.boardcontainer__imgplayer1 {
+  display: inline-block;
+  -webkit-box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
+}
+
+.bordcontainer__dices {
+  -ms-grid-column: 2;
+  grid-column: 2 / 2;
+}
+
+.dice {
+  position: relative;
+  margin: 30px 0 240px 0;
+}
+
+.dice .dice__player1 {
+  position: absolute;
+  cursor: pointer;
+  margin: 20px 0 0 0;
+  right: -15px;
+}
+
+.bordcontainer__btn {
+  -ms-grid-column: 2;
+  grid-column: 2 / 2;
+}
+
+.boardcontainer__btnplayer2 {
+  display: inline-block;
+  padding: 20px 20px 20px 20px;
+  margin: 0 60px 0 0;
+  background-color: #3e78be;
+  color: #FFF;
+  font-size: 21px;
+  line-height: 0px;
+  -webkit-box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.6);
+}
+
+.bordercontainer__rolledsixhuman {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  place-self: center;
+  position: relative;
+}
+
+.bordercontainer__rolledsixmachine {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  place-self: center;
+  position: relative;
+}
+
+.bordcontainer__containerinstruction {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  color: #FFF;
+  position: relative;
+}
+
+.bordcontainer__intruction {
+  position: absolute;
+  left: -280px;
+  top: 20px;
+  width: 650px;
+  font-size: 32px;
 }
 
 /* -------------Player img, dices, buttons and trap txt----------------*/
@@ -192,15 +360,10 @@ body {
 }
 
 .container__gridhorizontal2 {
-  clear: right;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
-}
-
-.container__gridhorizontal {
-  clear: left;
 }
 
 .container__gridvertically {
@@ -255,11 +418,21 @@ body {
 
 .message {
   height: 50px;
-  margin: 30px 0 30px 0;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  place-self: center;
+  position: relative;
 }
 
 .message-txt {
-  padding: 20px;
+  width: 540px;
+  position: absolute;
+  font-size: 21px;
+  color: #FFF;
+  right: -330px;
+  top: 210px;
 }
 
 .winner {
@@ -276,5 +449,29 @@ body {
   position: relative;
   display: -ms-grid;
   display: grid;
+}
+
+@font-face {
+  font-family: 'cinzel';
+  src: url(/Fonts/cinzel/Cinzel-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url(/Fonts/roboto/Roboto-Regular.ttf);
+}
+
+h1 {
+  font-family: "cinzel";
+}
+
+h2 {
+  font-family: "cinzel";
+}
+
+p {
+  font-family: "cinzel";
+  font-size: 16px;
+  color: #FFF;
 }
 /*# sourceMappingURL=styles.css.map */

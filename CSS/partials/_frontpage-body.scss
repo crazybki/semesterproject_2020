@@ -58,6 +58,9 @@ body {
    font-size: $bodytxt;
    color: $txt-color;
    margin: 0 0 10px 0;
+   width: 600px;
+   margin-right: auto;
+   margin-left: auto;
 }
 
 .introtxt__charactherchosen {
@@ -69,15 +72,17 @@ body {
 
 .chosenCharaters-countdown {
     position: relative;
-    & .counter {
+
+}
+
+     .counter {
         font-size: $heading3;
         color: $txt-color;
         position: absolute;
         right: -180px;
         top: 80px;
         width: 250px;
-    }
-}
+    }   
 
 
 /********FRONT-PAGE - Message and counter*****************/
@@ -134,6 +139,18 @@ body {
     position: absolute;
 }
 
+.chosencharacters__info {
+    display: flex;
+    justify-content: center;
+}
+
+.chosencharacter_opponent {
+    position: absolute;
+    top: 250px;
+    font-size: $bodytxt;
+    color: $txt-color;
+}
+
 .chosencharacters_player2 {
     @extend .chosencharacters_player1;
 }
@@ -147,3 +164,91 @@ body {
 /********FRONT-PAGE*****************/
 
 /********FOOTER*****************/
+
+/********FOOTER*****************/
+
+
+
+/********Tablets*****************/
+@media screen and (max-width: 1200px) {
+    .container__characters {                            
+        grid-template-columns: repeat(2, 15px);   
+        grid-auto-rows: 180px;                     
+        grid-gap: 350px;                       
+    }
+}
+/********Tablets*****************/
+
+/********Phones*****************/
+@media screen and (max-width: 640px) {
+    .container__characters {                            
+        grid-template-columns: repeat(2, 15px);   
+        grid-auto-rows: 180px;                     
+        grid-gap: 150px;                       
+    }
+
+    .containercharacters {
+        margin: 60px 90px 0 0;
+    }
+
+    .face-images {
+        width: 110px;
+    }
+    .pageintro {
+        .pageintro-heading {
+            font-size: $mobileH1;
+        }
+    }
+
+    .introtxt__head2 {
+        font-size: $mobileH2;
+    }
+
+    .introtxt__message {
+        font-size: $mobileBody;
+        margin: 0 10px 0 20px;
+        text-align: start;
+        line-height: 25px;
+        width: 350px;
+    }
+
+    .introtxt__charactherchosen {
+        font-family: $cinzelHeadings;
+        font-size: $mobileH3;
+    }
+
+    .player1 {
+        width: 110px;
+    }
+
+    .player2 {
+        @extend .player1;
+    }
+
+    .chosencharacter_opponent {
+        top: 360px;
+    }
+
+    .counter {
+        font-family: $cinzelHeadings;
+        font-size: $mobileH3;
+        top: 270px;
+        padding: 0 0 0 20px;
+    }
+
+    .face-names {
+        width: 90px;
+        padding: 20px 0 0 0;
+        font-size: $mobileBody;
+    }
+
+    .names {
+        width: 50px;
+    }
+
+    .pageintro-msg {
+        display: none;
+    }
+}
+
+/********Phones*****************/

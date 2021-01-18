@@ -1,21 +1,99 @@
 
 /* -------------Player img, dices, buttons and trap txt----------------*/
+
 .boardcontainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+
+.boardcontainer__playerimg {
+    grid-column: 2 / 2;
 }
 
 .boardcontainer__player1 {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    justify-items: end;
+    display: inline-block;
+    margin: 50px 390px 0 0;
 }
 
 .boardcontainer__player2 {
-    grid-column-start: 4;
-    grid-column-end: 4;
-    justify-items: center;
+    display: inline-block;
 }
+
+.boardcontainer__imgplayer1 {
+    display: inline-block;
+    box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.60);
+}
+
+
+
+.bordcontainer__dices {
+    grid-column: 2 / 2;
+}
+
+.dice {
+    position: relative;
+    margin: 30px 0 240px 0;
+
+    .dice__player1 {
+        position: absolute;
+        cursor: pointer;
+        margin: 20px 0 0 0;
+        right: -15px;
+    }
+}
+
+
+
+
+
+.bordcontainer__btn {
+    grid-column: 2 / 2;
+}
+
+
+.boardcontainer__btnplayer2 {
+    display: inline-block;
+    padding: 20px 20px 20px 20px;
+    margin: 0 60px 0 0;
+    background-color: $gridcell-blue;
+    color: $txt-color;
+    font-size: $bodytxt;
+    line-height: 0px;
+    box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.60);
+}
+
+.bordercontainer__rolledsixhuman {
+    grid-column: 2;
+    grid-row: 2;
+    place-self: center;
+    position: relative;
+}
+
+
+.bordercontainer__rolledsixmachine {
+    grid-column: 2;
+    grid-row: 2;
+    place-self: center;
+    position: relative;
+}
+
+.bordcontainer__containerinstruction {
+    grid-column: 2;
+    grid-row: 2;
+    color: $txt-color;
+    position: relative;
+}
+
+.bordcontainer__intruction {
+    position: absolute;
+    left: -280px;
+    top: 20px;
+    width: 650px;
+    font-size: $heading3;
+}
+
 /* -------------Player img, dices, buttons and trap txt----------------*/
 
 
@@ -49,13 +127,13 @@
  
 .container__gridhorizontal2 {
     @extend .container;
-    clear: right;
+
     flex-direction: row-reverse;
 }
 
 .container__gridhorizontal {
     @extend .container;
-    clear: left;
+  
 
 }
 
@@ -104,11 +182,19 @@
 
 .message {
     height: 50px;
-    margin: 30px 0 30px 0;
+    grid-column: 2;
+    grid-row: 2;
+    place-self: center;
+    position: relative;
 }
 
 .message-txt {
-    padding: 20px;
+    width: 540px;
+    position: absolute;
+    font-size: $bodytxt;
+    color: $txt-color;
+    right: -330px;
+    top: 210px;
 }
 
 .winner {
@@ -125,4 +211,5 @@
     position: relative;
     display: grid;
 }
+
 
