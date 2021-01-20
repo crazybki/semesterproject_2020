@@ -1,3 +1,53 @@
+/* Background pattern from Toptal Subtle Patterns https://www.toptal.com/designers/subtlepatterns/*/
+body {
+  background-image: url(/images/1x/background_new.png);
+  background-repeat: repeat;
+}
+
+/* Background pattern from Toptal Subtle Patterns https://www.toptal.com/designers/subtlepatterns/ */
+.ironthrone {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.winnerimg__character {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-animation: movefrombottom linear 3.5s;
+          animation: movefrombottom linear 3.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-transform: translate(0, -300px);
+          transform: translate(0, -300px);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes movefrombottom {
+  0% {
+    top: 100px;
+  }
+  100% {
+    top: 70%;
+  }
+}
+
+@keyframes movefrombottom {
+  0% {
+    top: 100px;
+  }
+  100% {
+    top: 70%;
+  }
+}
+
 /*Colors*/
 /*Colors*/
 /*Font-family*/
@@ -47,7 +97,7 @@ body {
   right: 0;
 }
 
-.container_intro .introtxt {
+.container_intro .container__introtxt {
   text-align: center;
 }
 
@@ -73,17 +123,18 @@ body {
   margin: 40px 0 0 0;
 }
 
-.chosenCharaters-countdown {
+.chosenCharaters__countdown {
   position: relative;
+  font-family: "cinzel";
 }
 
 .counter {
   font-size: 32px;
   color: #FFF;
   position: absolute;
-  right: -180px;
+  right: -250px;
   top: 80px;
-  width: 250px;
+  width: 350px;
 }
 
 /********FRONT-PAGE - Message and counter*****************/
@@ -92,7 +143,7 @@ body {
   margin: 60px 100px 0 0;
 }
 
-.container__characters {
+.containercharacters__images {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (15px)[5];
@@ -149,11 +200,12 @@ body {
           justify-content: center;
 }
 
-.chosencharacter_opponent {
+.chosencharacter_enemy {
   position: absolute;
   top: 250px;
-  font-size: 21px;
+  font-size: 32px;
   color: #FFF;
+  font-family: "cinzel";
 }
 
 /********FRONT-PAGE*****************/
@@ -161,7 +213,7 @@ body {
 /********FOOTER*****************/
 /********Tablets*****************/
 @media screen and (max-width: 1200px) {
-  .container__characters {
+  .containercharacters__images {
     -ms-grid-columns: (15px)[2];
         grid-template-columns: repeat(2, 15px);
     grid-auto-rows: 180px;
@@ -172,7 +224,7 @@ body {
 /********Tablets*****************/
 /********Phones*****************/
 @media screen and (max-width: 640px) {
-  .container__characters {
+  .containercharacters__images {
     -ms-grid-columns: (15px)[2];
         grid-template-columns: repeat(2, 15px);
     grid-auto-rows: 180px;

@@ -1,11 +1,11 @@
 import { getCharacters } from "/JS/got_JSON.js";
 
 
-const getCharaterFaces = document.querySelector('.container__characters');
-const face = document.querySelector('#chosenFace');
-const opponents = document.querySelector('#opponent');
-const counterElement = document.querySelector('.chosenCharaters-countdown');
-const introElement = document.querySelector('.introtxt');
+const getCharaterFaces = document.querySelector('.containercharacters__images');
+const face = document.querySelector('.chosenCharaters__chosenFace');
+const opponents = document.querySelector('.chosenCharaters__opponent');
+const counterElement = document.querySelector('.chosenCharaters__countdown');
+const introElement = document.querySelector('.container__introtxt');
 const chooseCharacterElement = document.querySelector('.pageintro-txt');
 const info = document.querySelector('.chosencharacters__info')
 
@@ -97,7 +97,7 @@ function player1Chosen(image, nameOfcharacter) {
                                     <img class="player1" src="${image}">
                                     <p class="names">${nameOfcharacter}</p>
                           </div>`;
-    info.innerHTML = `<div class="chosencharacter_opponent">Choose your opponents</div>`
+    info.innerHTML = `<div class="chosencharacter_enemy">Choose your opponents</div>`
 };
 
 function player2Chosen(image, nameOfcharacter) {
