@@ -14,6 +14,7 @@ const movepawn = document.querySelector('.player1pawn');
 const movepawn1 = document.querySelector('.player2pawn');
 const player2 = document.querySelector('#player2');
 let trapMessage = document.querySelector('.message');
+const numberOfTiles = 32;
 let winnerOfTheGame = [];
 
 //Sounds
@@ -30,37 +31,43 @@ const gridTile = ['#grid_6', '#grid_10', '#grid_15', '#grid_20', '#grid_29'];
 
 //
 window.addEventListener('load', (event) => {
-    gotTheme.play();
+    //  gotTheme.play();
     diceEl.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_1.png">`;
 });
 
 
 //New testing
 
-let playersTurn = false;
-let machineTurn = false;
+let playersTurn = true;
+
 
 diceEl.addEventListener('click', rolleDiceNumber);
 
-function rolleDiceNumber() {
+function rolleDiceNumber(event) {
+    if (!playersTurn && typeof event !== 'undefined') {
+        return
+    }
     let diceRoll = Math.floor(Math.random() * 6) + 1;
-    console.log(diceRoll)
     diceEl.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_${diceRoll}.png">`;
 
-    if (!playersTurn) {
-        playersTurn = true;
-        movePlayer1(diceRoll);
-        player1Rolled6(diceRoll);
-    } else {
-        machineTurn = true;
+    if (playersTurn) {
         playersTurn = false;
+        movePlayer1(diceRoll);
+
+        if (diceRoll === 6) {
+            playersTurn = true;
+            player1Rolled6(diceRoll);
+        } else {
+            setTimeout(() => {
+                rolleDiceNumber();
+            }, 1600);
+        }
+    } else {
+        playersTurn = true;
         movePlayer2(diceRoll);
         machineRolled6(diceRoll)
     }
 };
-
-//New testing
-
 
 
 /**
@@ -93,19 +100,13 @@ function movePlayer1(diceRoll) {
     player1Postion += diceRoll;
     let newGridId = '#grid_' + player1Postion;
 
-    if (player1Postion >= 32) {
+    if (playerIsWinner(player1Postion)) {
         document.querySelector('#grid_32').appendChild(player1);
 
         setTimeout(() => {
-            window.location.href = "/html/winnerpage.html"
-            let player1Img = document.querySelector('.boardcontainer__player1 img');
-            let player1Name = document.querySelector('.boardcontainer__player2 p');
-            let imgSrc = player1Img.src;
-            let dataName = player1Name.dataset.name;
-            let playerObject = { img: imgSrc, name: dataName }
-            winnerOfTheGame.push(playerObject);
-            localStorage.setItem('Winner', JSON.stringify(winnerOfTheGame));
-        }, 1500);
+            window.location.href = "/html/winnerpage.html";
+            localStorage.setItem('Winner', 0);
+        }, 200);
     } else {
         document.querySelector(newGridId).appendChild(player1);
     }
@@ -116,24 +117,28 @@ movePlayer1(0);
 
 
 
+
+
+function playerIsWinner(playerPosition) {
+    return playerPosition >= numberOfTiles
+}
+
+
+
+
+
 //Function to move the player, gets the diceroll from function rollDice
 function movePlayer2(diceRoll2) {
     player2Postion += diceRoll2;
     let newGridId = '#grid_' + player2Postion;
 
-    if (player2Postion >= 32) {
+    if (playerIsWinner(player2Postion)) {
         document.querySelector('#grid_32').appendChild(player2);
 
         setTimeout(() => {
             window.location.href = "/html/winnerpage.html";
-            let player2Img = document.querySelector('.boardcontainer__player2 img');
-            let player2Name = document.querySelector('.boardcontainer__player2 p');
-            let imgSrc2 = player2Img.src;
-            let dataName2 = player2Name.dataset.name;
-            let player2Object = { img: imgSrc2, name: dataName2 }
-            winnerOfTheGame.push(player2Object);
-            localStorage.setItem('Winner', JSON.stringify(winnerOfTheGame));
-        }, 1500);
+            localStorage.setItem('Winner', 1);
+        }, 200);
     } else {
         document.querySelector(newGridId).appendChild(player2);
     }
@@ -141,6 +146,8 @@ function movePlayer2(diceRoll2) {
 };
 
 movePlayer2(0);
+
+
 
 
 function checkForTrapsP1(updatedGridId, pos) {
@@ -151,11 +158,13 @@ function checkForTrapsP1(updatedGridId, pos) {
         setTimeout(() => {
             player1Postion = 1
             originalState.appendChild(player1)
-        }, 1300);
+        }, 1000);
 
 
     }
 };
+
+
 
 function checkForTrapsP2(updateTile) {
     let trap = gridTile.includes(updateTile);
@@ -166,9 +175,11 @@ function checkForTrapsP2(updateTile) {
         setTimeout(() => {
             player2Postion = 1
             originalState.appendChild(player2)
-        }, 1300);
+        }, 1000);
     }
 };
+
+
 
 
 function trap1() {
@@ -177,7 +188,7 @@ function trap1() {
 
     setTimeout(() => {
         trapMessage.innerHTML = '';
-    }, 1800);
+    }, 1000);
 };
 
 
@@ -195,11 +206,14 @@ function player1Rolled6(rollingDice) {
 };
 
 
+
+
 function machineRolled6(machineRoll) {
     if (machineRoll === 6) {
-        dice6P2.innerHTML = `<p class="message-txt">You rolled a six, throw the dice again`
-
+        dice6P2.innerHTML = `<p class="message-txt">Machine rolled a six, throw the dice again`
+        playersTurn = false;
         setTimeout(() => {
+            rolleDiceNumber();
             dice6P2.innerHTML = '';
         }, 3000);
     }
