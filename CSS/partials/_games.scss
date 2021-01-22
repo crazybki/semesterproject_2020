@@ -14,8 +14,6 @@
     @extend .boardcontainer__player1;
 }
 
-
-
 .bordcontainer__dices {
     display: flex;
     justify-content: center;
@@ -35,8 +33,6 @@
         margin: 50px 0 50px 0;
     }
 }
-
-
 
 
 .bordercontainer__rolledsixhuman {
@@ -163,6 +159,8 @@
     .message-txt {
         font-size: $bodytxt;
         position: absolute;
+        top: 40px;
+
     }
 }
 

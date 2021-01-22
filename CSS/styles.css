@@ -412,6 +412,7 @@ body {
 .message .message-txt {
   font-size: 21px;
   position: absolute;
+  top: 40px;
 }
 
 .winner {
