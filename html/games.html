@@ -10,96 +10,96 @@
 </head>
 
 <body>
+    <main>
+        <div class="boardcontainer">
+            <div class="boardcontainer__playerimg">
+            </div>
 
-
-    <div class="boardcontainer">
-        <div class="boardcontainer__playerimg">
+            <audio class="bordcontainer_player" src="/sounds/GOT_theme.mp3" controls>
+                <div class="bordcontainer__dices">
+                    <div id="dice1" class="dice"></div>
+                </div>
+                <div class="bordcontainer__containerinstruction">
+                    <p class="bordcontainer__intruction">Click on the dice to get to Red Keep</p>
+                </div>
+                <div class="message"></div>
+                <div class="bordercontainer__rolledsixhuman"></div>
+                <div class="bordercontainer__rolledsixmachine"></div>
         </div>
 
 
-        <div class="bordcontainer__dices">
-            <div id="dice1" class="dice"></div>
+
+
+        <div id="player1"></div>
+        <div id="player2"></div>
+
+
+        <div class="container">
+            <div class="gridcell" id="grid_1"></div>
+            <div class="gridcell" id="grid_2"></div>
+            <div class="gridcell" id="grid_3"></div>
+            <div class="gridcell" id="grid_4"></div>
+            <div class="gridcell" id="grid_5"></div>
+            <div class="gridcell gridcell__colorred" id="grid_6"></div>
+            <div class="gridcell" id="grid_7"></div>
+            <div class="gridcell" id="grid_8"></div>
+            <div class="gridcell" id="grid_9"></div>
+            <div class="gridcell gridcell__colorred" id="grid_10"></div>
         </div>
-        <div class="bordcontainer__containerinstruction">
-            <p class="bordcontainer__intruction">Click on the dice to get to Red Keep</p>
+
+
+        <div class="container__gridvertically">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="gridcell" id="grid_11"></div>
         </div>
-        <div class="message"></div>
-        <div class="bordercontainer__rolledsixhuman"></div>
-        <div class="bordercontainer__rolledsixmachine"></div>
-    </div>
 
-
-
-
-    <div id="player1"></div>
-    <div id="player2"></div>
-
-
-    <div class="container">
-        <div class="gridcell" id="grid_1"></div>
-        <div class="gridcell" id="grid_2"></div>
-        <div class="gridcell" id="grid_3"></div>
-        <div class="gridcell" id="grid_4"></div>
-        <div class="gridcell" id="grid_5"></div>
-        <div class="gridcell gridcell__colorred" id="grid_6"></div>
-        <div class="gridcell" id="grid_7"></div>
-        <div class="gridcell" id="grid_8"></div>
-        <div class="gridcell" id="grid_9"></div>
-        <div class="gridcell gridcell__colorred" id="grid_10"></div>
-    </div>
-
-
-    <div class="container__gridvertically">
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="tile"></div>
-        <div class="gridcell" id="grid_11"></div>
-    </div>
-
-    <div class="container__gridhorizontal2">
-        <div class="gridcell" id="grid_12"></div>
-        <div class="gridcell" id="grid_13"></div>
-        <div class="gridcell" id="grid_14"></div>
-        <div class="gridcell gridcell__colorred" id="grid_15"></div>
-        <div class="gridcell" id="grid_16"></div>
-        <div class="gridcell" id="grid_17"></div>
-        <div class="gridcell" id="grid_18"></div>
-        <div class="gridcell" id="grid_19"></div>
-        <div class="gridcell gridcell__colorred" id="grid_20"></div>
-        <div class="gridcell" id="grid_21"></div>
-    </div>
-
-    <div class="container__gridverticallyleft">
-        <div class="container__lefttile"></div>
-        <div class="container__lefttile"></div>
-        <div class="container__lefttile"></div>
-        <div class="container__lefttile"></div>
-        <div class="container__lefttile"></div>
-        <div class="container__lefttile"></div>
-        <div class="container__lefttile"></div>
-        <div class="container__lefttile"></div>
-        <div class="gridcell" id="grid_22"></div>
-    </div>
-
-    <div class="container__gridhorizontal">
-        <div class="gridcell" id="grid_23"></div>
-        <div class="gridcell" id="grid_24"></div>
-        <div class="gridcell" id="grid_25"></div>
-        <div class="gridcell" id="grid_26"></div>
-        <div class="gridcell" id="grid_27"></div>
-        <div class="gridcell" id="grid_28"></div>
-        <div class="gridcell gridcell__colorred" id="grid_29"></div>
-        <div class="gridcell" id="grid_30"></div>
-        <div class="gridcell" id="grid_31"></div>
-        <div class="gridcell gridcell__invisible" id="grid_32">
-            <img class="castle" src="/images/1x/castle.png" alt="image of castle, the user has won">
+        <div class="container__gridhorizontal2">
+            <div class="gridcell" id="grid_12"></div>
+            <div class="gridcell" id="grid_13"></div>
+            <div class="gridcell" id="grid_14"></div>
+            <div class="gridcell gridcell__colorred" id="grid_15"></div>
+            <div class="gridcell" id="grid_16"></div>
+            <div class="gridcell" id="grid_17"></div>
+            <div class="gridcell" id="grid_18"></div>
+            <div class="gridcell" id="grid_19"></div>
+            <div class="gridcell gridcell__colorred" id="grid_20"></div>
+            <div class="gridcell" id="grid_21"></div>
         </div>
-    </div>
+
+        <div class="container__gridverticallyleft">
+            <div class="container__lefttile"></div>
+            <div class="container__lefttile"></div>
+            <div class="container__lefttile"></div>
+            <div class="container__lefttile"></div>
+            <div class="container__lefttile"></div>
+            <div class="container__lefttile"></div>
+            <div class="container__lefttile"></div>
+            <div class="container__lefttile"></div>
+            <div class="gridcell" id="grid_22"></div>
+        </div>
+
+        <div class="container__gridhorizontal">
+            <div class="gridcell" id="grid_23"></div>
+            <div class="gridcell" id="grid_24"></div>
+            <div class="gridcell" id="grid_25"></div>
+            <div class="gridcell" id="grid_26"></div>
+            <div class="gridcell" id="grid_27"></div>
+            <div class="gridcell" id="grid_28"></div>
+            <div class="gridcell gridcell__colorred" id="grid_29"></div>
+            <div class="gridcell" id="grid_30"></div>
+            <div class="gridcell" id="grid_31"></div>
+            <div class="gridcell gridcell__invisible" id="grid_32">
+                <img class="castle" src="/images/1x/castle.png" alt="image of castle, the user has won">
+            </div>
+        </div>
+    </main>
     <script src="/JS/games.js" type="module"></script>
 </body>
 

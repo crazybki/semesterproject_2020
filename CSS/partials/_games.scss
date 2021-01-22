@@ -73,10 +73,7 @@
 
 
 .bordercontainer__rolledsixmachine {
-    grid-column: 2;
-    grid-row: 2;
-    place-self: center;
-    position: relative;
+    @extend .bordercontainer__rolledsixhuman;
 }
 
 .bordcontainer__containerinstruction {
@@ -94,6 +91,12 @@
     font-size: $heading3;
 }
 
+.bordcontainer_player {
+    width: 200px;
+    height: 45px;
+    background: $main-color;
+}
+
 /* -------------Player img, dices, buttons and trap txt----------------*/
 
 
@@ -105,6 +108,7 @@
     z-index: 10;
     grid-area: 1;
     justify-self: center;
+    position: relative;
 }
 
 #player2 {
@@ -114,10 +118,12 @@
 
 .player1pawn {
     display: block;
+    position: absolute;
 }
 
 .player2pawn {
-    display: block;
+    @extend .player1pawn;
+    top: 50px;
 }
 
 .container {

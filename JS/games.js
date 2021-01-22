@@ -3,16 +3,11 @@ const playerImg = document.querySelector('.boardcontainer__playerimg');
 
 
 //Get button, for dices and for players
-const diceBtnPlayer = document.querySelector('#btn_dice');
-const diceBtnMachine = document.querySelector('#btn_dice2');
-const diceEl = document.querySelector('#dice1');
-const diceEl2 = document.querySelector('#dice2');
+const diceImg = document.querySelector('#dice1');
 const player1 = document.querySelector('#player1');
+const player2 = document.querySelector('#player2');
 const dice6P1 = document.querySelector('.bordercontainer__rolledsixhuman')
 const dice6P2 = document.querySelector('.bordercontainer__rolledsixmachine')
-const movepawn = document.querySelector('.player1pawn');
-const movepawn1 = document.querySelector('.player2pawn');
-const player2 = document.querySelector('#player2');
 let trapMessage = document.querySelector('.message');
 const numberOfTiles = 32;
 let winnerOfTheGame = [];
@@ -32,7 +27,7 @@ const gridTile = ['#grid_6', '#grid_10', '#grid_15', '#grid_20', '#grid_29'];
 //
 window.addEventListener('load', (event) => {
     //  gotTheme.play();
-    diceEl.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_1.png">`;
+    diceImg.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_1.png" alt="image of dice when the page is loaded">`;
 });
 
 
@@ -41,14 +36,14 @@ window.addEventListener('load', (event) => {
 let playersTurn = true;
 
 
-diceEl.addEventListener('click', rolleDiceNumber);
+diceImg.addEventListener('click', rolleDiceNumber);
 
 function rolleDiceNumber(event) {
     if (!playersTurn && typeof event !== 'undefined') {
         return
     }
     let diceRoll = Math.floor(Math.random() * 6) + 1;
-    diceEl.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_${diceRoll}.png">`;
+    diceImg.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_${diceRoll}.png alt="image of the dice when the user clicking">`;
 
     if (playersTurn) {
         playersTurn = false;
@@ -64,8 +59,8 @@ function rolleDiceNumber(event) {
         }
     } else {
         playersTurn = true;
-        movePlayer2(diceRoll);
-        machineRolled6(diceRoll)
+        moveAi(diceRoll);
+        aIRolled6(diceRoll)
     }
 };
 
@@ -81,15 +76,15 @@ function characterRetrived() {
     let infoAboutFaces = JSON.parse(faceRetrieved);
 
     playerImg.innerHTML += `<div class="boardcontainer__player1">
-                                <img class="boardcontainer__imgplayer1" src="${infoAboutFaces[0].image}">
+                                <img class="boardcontainer__imgplayer1" src="${infoAboutFaces[0].image}" alt="Image of the character the user has chosen">
                                 <p data-name="${infoAboutFaces[0].name}">${infoAboutFaces[0].name}</p>
                             </div>
                             <div class="boardcontainer__player2">
-                                <img class="boardcontainer__imgplayer1" src="${infoAboutFaces[1].image}">
+                                <img class="boardcontainer__imgplayer1" src="${infoAboutFaces[1].image}" alt="Image of the character the user has chosen as opponent">
                                 <p data-name="${infoAboutFaces[1].name}">${infoAboutFaces[1].name}</p>
                             </div>`;
-    player1.innerHTML = `<img class="player1pawn" src="${infoAboutFaces[0].gamePawn}">`;
-    player2.innerHTML = `<img class="player2pawn" src="${infoAboutFaces[1].gamePawn}">`;
+    player1.innerHTML = `<img class="player1pawn" src="${infoAboutFaces[0].gamePawn}" alt="image of the pawn for the player">`;
+    player2.innerHTML = `<img class="player2pawn" src="${infoAboutFaces[1].gamePawn}" alt="Image of the pawn for the opponent/AI">`;
 };
 
 characterRetrived();
@@ -103,14 +98,16 @@ function movePlayer1(diceRoll) {
     if (playerIsWinner(player1Postion)) {
         document.querySelector('#grid_32').appendChild(player1);
 
+        diceImg.removeEventListener('click', rolleDiceNumber);
+
         setTimeout(() => {
             window.location.href = "/html/winnerpage.html";
             localStorage.setItem('Winner', 0);
-        }, 200);
+        }, 1300);
     } else {
         document.querySelector(newGridId).appendChild(player1);
     }
-    checkForTrapsP1(newGridId, player1Postion);
+    checkForTrapsPlayer(newGridId, player1Postion);
 };
 
 movePlayer1(0);
@@ -128,32 +125,32 @@ function playerIsWinner(playerPosition) {
 
 
 //Function to move the player, gets the diceroll from function rollDice
-function movePlayer2(diceRoll2) {
+function moveAi(diceRoll2) {
     player2Postion += diceRoll2;
     let newGridId = '#grid_' + player2Postion;
 
     if (playerIsWinner(player2Postion)) {
         document.querySelector('#grid_32').appendChild(player2);
-
+        diceImg.removeEventListener('click', rolleDiceNumber);
         setTimeout(() => {
             window.location.href = "/html/winnerpage.html";
             localStorage.setItem('Winner', 1);
-        }, 200);
+        }, 1300);
     } else {
         document.querySelector(newGridId).appendChild(player2);
     }
-    checkForTrapsP2(newGridId);
+    checkForTrapsAi(newGridId);
 };
 
-movePlayer2(0);
+moveAi(0);
 
 
 
 
-function checkForTrapsP1(updatedGridId, pos) {
+function checkForTrapsPlayer(updatedGridId) {
     let trap = gridTile.includes(updatedGridId);
     if (trap) {
-        trap1();
+        messageForTraps();
 
         setTimeout(() => {
             player1Postion = 1
@@ -166,11 +163,11 @@ function checkForTrapsP1(updatedGridId, pos) {
 
 
 
-function checkForTrapsP2(updateTile) {
+function checkForTrapsAi(updateTile) {
     let trap = gridTile.includes(updateTile);
     if (trap) {
 
-        trap1();
+        messageForTraps();
 
         setTimeout(() => {
             player2Postion = 1
@@ -182,7 +179,7 @@ function checkForTrapsP2(updateTile) {
 
 
 
-function trap1() {
+function messageForTraps() {
     trapMessage.innerHTML = `<p class="message-txt">You stepped on a 
                              trap. Move back to square one</p>`;
 
@@ -208,7 +205,7 @@ function player1Rolled6(rollingDice) {
 
 
 
-function machineRolled6(machineRoll) {
+function aIRolled6(machineRoll) {
     if (machineRoll === 6) {
         dice6P2.innerHTML = `<p class="message-txt">Machine rolled a six, throw the dice again`
         playersTurn = false;

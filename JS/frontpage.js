@@ -38,8 +38,8 @@ infoAboutGame();
 
 // Retrieving all characthers for the gamer to choose from
 getCharacters.forEach(element => {
-    getCharaterFaces.innerHTML += `<div class="face__card">
-                                        <img class="face-images" data-gamepawn="${element.pawn}" 
+    getCharaterFaces.innerHTML += `<div class="containercharacters__cards">
+                                        <img class="containercharacters__faces" data-gamepawn="${element.pawn}" alt="images of the characters the user can choose from" 
                                         data-name="${element.Name}" src="${element.image}">
                                         <p class="face-names">${element.Name}</p>
                                     </div>`;
@@ -49,7 +49,7 @@ getCharacters.forEach(element => {
 
 
 
-const images = document.querySelectorAll('.face-images');
+const images = document.querySelectorAll('.containercharacters__faces');
 
 images.forEach(buttons => {
     buttons.addEventListener('click', characterIsChosen)
@@ -86,7 +86,7 @@ function characterIsChosen() {
             gameStarting();
             setTimeout(() => {
                 window.location.href = "/html/games.html";
-            }, 12000);
+            }, 11000);
         }
     }
 };
@@ -94,7 +94,7 @@ function characterIsChosen() {
 
 function player1Chosen(image, nameOfcharacter) {
     face.innerHTML = `<div class="chosencharacters_player1">
-                                    <img class="player1" src="${image}">
+                                    <img class="player1" src="${image}" alt="image of the user chose">
                                     <p class="names">${nameOfcharacter}</p>
                           </div>`;
     info.innerHTML = `<div class="chosencharacter_enemy">Choose your opponents</div>`
@@ -102,7 +102,7 @@ function player1Chosen(image, nameOfcharacter) {
 
 function player2Chosen(image, nameOfcharacter) {
     opponents.innerHTML = `<div class="chosencharacters_player2">
-                                    <img class="player2" src="${image}">
+                                    <img class="player2" src="${image}" alt="image of the user chose as opponent">
                                     <p class="names">${nameOfcharacter}</p>
                           </div>`;
     info.innerHTML = '';

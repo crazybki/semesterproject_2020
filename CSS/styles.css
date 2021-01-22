@@ -4,6 +4,13 @@
 /*Font-family*/
 /*Font sizes*/
 /*Font sizes*/
+/* Background pattern from Toptal Subtle Patterns https://www.toptal.com/designers/subtlepatterns/*/
+body {
+  background-image: url(/images/1x/background_new.png);
+  background-repeat: repeat;
+}
+
+/* Background pattern from Toptal Subtle Patterns https://www.toptal.com/designers/subtlepatterns/ */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -16,10 +23,6 @@ body {
 }
 
 /********FRONT-PAGE - Message and counter*****************/
-.containerbtn {
-  text-align: center;
-}
-
 .pageintro {
   text-align: center;
   margin: 40px 0 20px 0;
@@ -105,14 +108,14 @@ body {
           justify-content: center;
 }
 
-.face-images {
+.containercharacters__faces {
   cursor: pointer;
   opacity: 1;
   -webkit-box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
           box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
 }
 
-.face__card {
+.containercharacters__cards {
   position: relative;
 }
 
@@ -183,8 +186,8 @@ body {
   .containercharacters {
     margin: 60px 90px 0 0;
   }
-  .face-images {
-    width: 110px;
+  .containercharacters__faces {
+    width: 100px;
   }
   .pageintro .pageintro-heading {
     font-size: 32px;
@@ -194,7 +197,7 @@ body {
   }
   .introtxt__message {
     font-size: 16px;
-    margin: 0 10px 0 20px;
+    margin: 0 10px 0 35px;
     text-align: start;
     line-height: 25px;
     width: 350px;
@@ -204,16 +207,17 @@ body {
     font-size: 22px;
   }
   .player1, .player2 {
-    width: 110px;
+    width: 100px;
   }
   .chosencharacter_opponent {
     top: 360px;
   }
   .counter {
     font-family: "cinzel";
-    font-size: 22px;
-    top: 270px;
-    padding: 0 0 0 20px;
+    font-size: 16px;
+    top: 280px;
+    left: -20px;
+    width: 145px;
   }
   .face-names {
     width: 90px;
@@ -225,6 +229,10 @@ body {
   }
   .pageintro-msg {
     display: none;
+  }
+  .chosencharacter_enemy {
+    font-size: 22px;
+    top: 390px;
   }
 }
 
@@ -294,16 +302,7 @@ body {
           box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.6);
 }
 
-.bordercontainer__rolledsixhuman {
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 2;
-  grid-row: 2;
-  place-self: center;
-  position: relative;
-}
-
-.bordercontainer__rolledsixmachine {
+.bordercontainer__rolledsixhuman, .bordercontainer__rolledsixmachine {
   -ms-grid-column: 2;
   grid-column: 2;
   -ms-grid-row: 2;
@@ -329,6 +328,12 @@ body {
   font-size: 32px;
 }
 
+.bordcontainer_player {
+  width: 200px;
+  height: 45px;
+  background: #0F2033;
+}
+
 /* -------------Player img, dices, buttons and trap txt----------------*/
 /* --------Gridcells-------------*/
 #player1, #player2 {
@@ -338,18 +343,20 @@ body {
   grid-area: 1;
   -ms-grid-column-align: center;
       justify-self: center;
+  position: relative;
 }
 
 #player2 {
   margin: 20px 0 0 30px;
 }
 
-.player1pawn {
+.player1pawn, .player2pawn {
   display: block;
+  position: absolute;
 }
 
 .player2pawn {
-  display: block;
+  top: 50px;
 }
 
 .container, .container__gridhorizontal2, .container__gridhorizontal {
@@ -477,13 +484,6 @@ p {
   color: #FFF;
 }
 
-/* Background pattern from Toptal Subtle Patterns https://www.toptal.com/designers/subtlepatterns/*/
-body {
-  background-image: url(/images/1x/background_new.png);
-  background-repeat: repeat;
-}
-
-/* Background pattern from Toptal Subtle Patterns https://www.toptal.com/designers/subtlepatterns/ */
 .container__heading1 {
   color: #FFF;
 }
