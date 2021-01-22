@@ -153,7 +153,7 @@ export const getCharacters = [{
 
 {
     "Id": 4,
-    "Name": "Artys I Arryn",
+    "Name": "Artys Arryn",
     "IsFemale": false,
     "Culture": "Andal",
     "Titles": ["King of Mountain and Vale", "Ser"],

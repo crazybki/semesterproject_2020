@@ -67,12 +67,15 @@ function characterIsChosen() {
         let name = this.dataset.name;
         let game_piece = this.dataset.gamepawn;
 
-        let arr = { name: name, image: imgUrl, gamePawn: game_piece };
+        let localStorageInfo = {
+            name: name,
+            image: imgUrl,
+            gamePawn: game_piece
+        };
 
-        storeImg.push(arr);
-        console.log(storeImg);
-
+        storeImg.push(localStorageInfo);
         introElement.remove();
+
         chooseCharacterElement.innerHTML = `<p class="pageintro-msg">vs</p>`
 
         localStorage.setItem('character', JSON.stringify(storeImg));
