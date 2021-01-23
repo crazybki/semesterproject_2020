@@ -7,7 +7,7 @@ function retirevedFromLocalStorage() {
     let winner = localStorage.getItem('Winner');
     let getWinner = charaters[winner];
     heading.innerHTML = `<h1 class="container__heading1">${getWinner.name} is the winner</h1>`;
-    imgOfWinner.innerHTML = `<img class="winnerimg__character" src="${getWinner.image}"> alt="image of the character that won"`;
+    imgOfWinner.innerHTML = `<img class="winnerimg__character" src="${getWinner.image}" alt="image of the character that won">`;
 }
 retirevedFromLocalStorage();
 

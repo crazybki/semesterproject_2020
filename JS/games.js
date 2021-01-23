@@ -53,7 +53,7 @@ function rolleDiceNumber(event) {
         } else {
             setTimeout(() => {
                 rolleDiceNumber();
-            }, 1600);
+            }, 1450);
         }
     } else {
         playersTurn = true;
@@ -153,7 +153,7 @@ function checkForTrapsPlayer(updatedGridId) {
         setTimeout(() => {
             player1Postion = 1
             originalState.appendChild(player1)
-        }, 1000);
+        }, 900);
 
 
     }
@@ -170,7 +170,7 @@ function checkForTrapsAi(updateTile) {
         setTimeout(() => {
             player2Postion = 1
             originalState.appendChild(player2)
-        }, 1000);
+        }, 1400);
     }
 };
 
@@ -197,7 +197,7 @@ function player1Rolled6(rollingDice) {
 
         setTimeout(() => {
             dice6P1.innerHTML = '';
-        }, 3000);
+        }, 1300);
     }
 };
 
@@ -211,6 +211,6 @@ function aIRolled6(machineRoll) {
         setTimeout(() => {
             rolleDiceNumber();
             dice6P2.innerHTML = '';
-        }, 3000);
+        }, 1400);
     }
 };
