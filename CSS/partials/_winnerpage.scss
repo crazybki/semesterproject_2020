@@ -1,0 +1,70 @@
+
+
+.container__heading1 {
+    color: $txt-color;
+    
+}
+
+.flexcontainer {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flexcontainer__flex {
+    margin: 0 190px 0 190px;
+}
+
+.containerassets {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.containerassets__images {
+    margin: 150px 190px 0 190px;
+}
+
+.ironthrone {
+    position: absolute;
+    margin: auto;
+    left: 0; 
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.winnerimg__character {
+    position: absolute;
+    margin: auto;
+    left: 0; 
+    right: 0;
+    top: 0;
+    animation: movefrombottom linear 3.5s;
+    animation-iteration-count: 1;
+    transform: translate(0,-300px);
+    animation-fill-mode: forwards;
+}
+
+@keyframes movefrombottom {
+    0% {
+        top: -50px;
+    }
+
+    100% {
+        top: 70%;
+    }
+}
+
+.resetgame {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 0 0;
+
+    .resetgame__btn {
+        padding: 10px;
+        text-transform: uppercase;
+        font-family: $cinzelHeadings;
+        font-weight: 600;
+        font-size: $bodytxt;
+    }
+}
+

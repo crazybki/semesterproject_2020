@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'cinzel';
+    src: url(/Fonts/cinzel/Cinzel-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url(/Fonts/roboto/Roboto-Regular.ttf);
+}
+
+
+
+h1 {
+    font-family: $cinzelHeadings;
+    $heading1: 48px;
+}
+
+h2 {
+    font-family: $cinzelHeadings;
+    $heading2: 36px;
+}
+
+
+p {
+    font-family: $cinzelHeadings;
+    font-size: $mobileBody;
+    color: $txt-color;
+}
