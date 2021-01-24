@@ -15,8 +15,8 @@ export const getCharacters = [{
     "PovBooks": [],
     "PlayedBy": ["Aimee Richardson, Nell Tiger Free"],
     "TvSeries": ["Season 1", "Season 2", "Season 5", "Season 6"],
-    "pawn": "/images/1x/baratheon_pawn.png",
-    "image": ['/images/1x/myrcella_baratheon.png']
+    "pawn": "../images/1x/baratheon_pawn.png",
+    "image": ['../images/1x/myrcella_baratheon.png']
 },
 
 
@@ -36,8 +36,8 @@ export const getCharacters = [{
     "PovBooks": [],
     "PlayedBy": [""],
     "TvSeries": [],
-    "pawn": "/images/1x/baratheon_pawn.png",
-    "image": ['/images/1x/ormund_baretheon.png']
+    "pawn": "../images/1x/baratheon_pawn.png",
+    "image": ['../images/1x/ormund_baretheon.png']
 },
 
 {
@@ -58,8 +58,8 @@ export const getCharacters = [{
     "PovBooks": [],
     "PlayedBy": [""],
     "TvSeries": [],
-    "pawn": "/images/1x/targeryan_pawn.png",
-    "image": ['/images/1x/daenerys_targeryan.png']
+    "pawn": "../images/1x/targeryan_pawn.png",
+    "image": ['../images/1x/daenerys_targeryan.png']
 },
 
 {
@@ -80,8 +80,8 @@ export const getCharacters = [{
     "PovBooks": [1, 2, 3, 8],
     "PlayedBy": ["Emilia Clarke"],
     "TvSeries": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
-    "pawn": "/images/1x/targeryan_pawn.png",
-    "image": ['/images/1x/daenerys_targeryan_2.png']
+    "pawn": "../images/1x/targeryan_pawn.png",
+    "image": ['../images/1x/daenerys_targeryan_2.png']
 },
 
 {
@@ -102,8 +102,8 @@ export const getCharacters = [{
     "PovBooks": [2, 8],
     "PlayedBy": ["Alfie Allen"],
     "TvSeries": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
-    "pawn": "/images/1x/greyjoy_pawn.png",
-    "image": ['/images/1x/theon_greyjoy.png']
+    "pawn": "../images/1x/greyjoy_pawn.png",
+    "image": ['../images/1x/theon_greyjoy.png']
 },
 
 
@@ -124,8 +124,8 @@ export const getCharacters = [{
     "PovBooks": [],
     "PlayedBy": [""],
     "TvSeries": [],
-    "pawn": "/images/1x/greyjoy_pawn.png",
-    "image": ['/images/1x/euron_greyjoy.png']
+    "pawn": "../images/1x/greyjoy_pawn.png",
+    "image": ['../images/1x/euron_greyjoy.png']
 },
 
 {
@@ -146,8 +146,8 @@ export const getCharacters = [{
     "PovBooks": [],
     "PlayedBy": [""],
     "TvSeries": [],
-    "pawn": "/images/1x/arryn_pawn.png",
-    "image": ['/images/1x/alys_arryn.png']
+    "pawn": "../images/1x/arryn_pawn.png",
+    "image": ['../images/1x/alys_arryn.png']
 },
 
 
@@ -169,8 +169,8 @@ export const getCharacters = [{
     "PovBooks": [],
     "PlayedBy": [""],
     "TvSeries": [],
-    "pawn": "/images/1x/arryn_pawn.png",
-    "image": ['/images/1x/Robin_arryn.png']
+    "pawn": "../images/1x/arryn_pawn.png",
+    "image": ['../images/1x/Robin_arryn.png']
 },
 
 
@@ -192,8 +192,8 @@ export const getCharacters = [{
     "PovBooks": [3, 5, 8],
     "PlayedBy": ["Nikolaj Coster-Waldau"],
     "TvSeries": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5"],
-    "pawn": "/images/1x/lannister_pawn.png",
-    "image": ['/images/1x/jamie_lannister.png']
+    "pawn": "../images/1x/lannister_pawn.png",
+    "image": ['../images/1x/jamie_lannister.png']
 },
 
 
@@ -215,8 +215,8 @@ export const getCharacters = [{
     "PovBooks": [1, 2, 3, 8],
     "PlayedBy": ["Peter Dinklage"],
     "TvSeries": ["Season 1", "Season 2", "Season 3", "Season 4", "Season 5", "Season 6"],
-    "pawn": "/images/1x/lannister_pawn.png",
-    "image": ['/images/1x/tyrion_lannister.png']
+    "pawn": "../images/1x/lannister_pawn.png",
+    "image": ['../images/1x/tyrion_lannister.png']
 },
 ]
 

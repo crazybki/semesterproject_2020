@@ -31,7 +31,7 @@ const gridTile = ['#grid_6', '#grid_10', '#grid_15', '#grid_20', '#grid_29'];
 //
 window.addEventListener('load', (event) => {
     gotTheme.play();
-    diceImg.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_1.png">`;
+    diceImg.innerHTML = `<img class="dice__player1" src="../images/1x/dice1_1.png">`;
 });
 
 play.addEventListener('click', playMusic);
@@ -54,7 +54,7 @@ function rolleDiceNumber(event) {
         return
     }
     let diceRoll = Math.floor(Math.random() * 6) + 1;
-    diceImg.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_${diceRoll}.png" alt="image of the dice when the user clicking">`;
+    diceImg.innerHTML = `<img class="dice__player1" src="../images/1x/dice1_${diceRoll}.png" alt="image of the dice when the user clicking">`;
     console.log(diceImg)
     if (playersTurn) {
         playersTurn = false;
@@ -66,7 +66,7 @@ function rolleDiceNumber(event) {
         } else {
             setTimeout(() => {
                 rolleDiceNumber();
-            }, 1450);
+            }, 1600);
         }
     } else {
         playersTurn = true;

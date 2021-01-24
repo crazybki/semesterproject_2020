@@ -6,7 +6,7 @@
 /*Font sizes*/
 /* Background pattern from Toptal Subtle Patterns https://www.toptal.com/designers/subtlepatterns/*/
 body {
-  background-image: url(/images/1x/background_new.png);
+  background-image: url("../images/1x/background_new.png");
   background-repeat: repeat;
 }
 
@@ -559,12 +559,7 @@ footer {
 
 @font-face {
   font-family: 'cinzel';
-  src: url(/Fonts/cinzel/Cinzel-Regular.ttf);
-}
-
-@font-face {
-  font-family: 'roboto';
-  src: url(/Fonts/roboto/Roboto-Regular.ttf);
+  src: url(../Fonts/cinzel/Cinzel-Regular.ttf);
 }
 
 h1 {

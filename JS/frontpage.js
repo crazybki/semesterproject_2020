@@ -1,4 +1,4 @@
-import { getCharacters } from "/JS/got_JSON.js";
+import { getCharacters } from "../JS/got_JSON.js";
 
 
 const getCharaterFaces = document.querySelector('.containercharacters__images');
@@ -63,13 +63,12 @@ images.forEach(buttons => {
 function characterIsChosen() {
     if (!starting) {
         let img = this.src;
-        let imgUrl = img.slice(21, 60);
         let name = this.dataset.name;
         let game_piece = this.dataset.gamepawn;
 
         let localStorageInfo = {
             name: name,
-            image: imgUrl,
+            image: img,
             gamePawn: game_piece
         };
 
@@ -88,7 +87,7 @@ function characterIsChosen() {
             player2Chosen(img, name);
             gameStarting();
             setTimeout(() => {
-                window.location.href = "/html/games.html";
+                window.location.href = "../html/games.html";
             }, 11000);
         }
     }
