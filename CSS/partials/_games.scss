@@ -118,7 +118,7 @@
 
 .container__gridvertically {
     @include flex;
-    & .tile {
+    & .container__gridcell {
         width: 181px;
         margin: 3px;
         height: 120px;
@@ -128,7 +128,7 @@
 .container__gridverticallyleft {
     @include flex;
     flex-direction: row-reverse;
-    & .container__lefttile {
+    & .container__leftgrid {
         width: 181px;
         margin: 3px;
         height: 120px;
