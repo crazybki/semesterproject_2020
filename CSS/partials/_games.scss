@@ -79,12 +79,14 @@
         margin: 25px 25px 0 0;
         opacity: 0.3;
         transition: 0.5s;
+        cursor: pointer;
     }
 
     .musicontainer__paused {
         margin: 25px 55px 0 0;
         opacity: 0.3;
         transition: 0.5s;
+        cursor: pointer;
     }
 
     .musicontainer__play:hover {
@@ -125,7 +127,7 @@
 
 .player2pawn {
     @extend .player1pawn;
-    top: 50px;
+    top: 40px;
 }
 
 .container {
@@ -148,10 +150,11 @@
     @include flex;
     & .container__gridcell {
         width: 181px;
-        margin: 3px;
+        margin: 3px 0 0 5px; 
         height: 120px;
     }
 }
+
 
 .container__gridverticallyleft {
     @include flex;
@@ -168,6 +171,14 @@
   width: 160px;
   margin: 3px;
   height: 110px;
+}
+
+.gridcell__verticallyright {
+    margin: 5px 0 0 3px;
+}
+
+.gridcell__verticallleft {
+    margin: 7px 0 0 3px;
 }
 
 .gridcell__colorred {

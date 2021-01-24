@@ -337,6 +337,7 @@ body {
   opacity: 0.3;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .musicontainer .musicontainer__paused {
@@ -344,6 +345,7 @@ body {
   opacity: 0.3;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .musicontainer .musicontainer__play:hover {
@@ -376,7 +378,7 @@ body {
 }
 
 .player2pawn {
-  top: 50px;
+  top: 40px;
 }
 
 .container, .container__gridhorizontal2, .container__gridhorizontal {
@@ -406,7 +408,7 @@ body {
 
 .container__gridvertically .container__gridcell {
   width: 181px;
-  margin: 3px;
+  margin: 3px 0 0 5px;
   height: 120px;
 }
 
@@ -434,6 +436,14 @@ body {
   width: 160px;
   margin: 3px;
   height: 110px;
+}
+
+.gridcell__verticallyright {
+  margin: 5px 0 0 3px;
+}
+
+.gridcell__verticallleft {
+  margin: 7px 0 0 3px;
 }
 
 .gridcell__colorred {
