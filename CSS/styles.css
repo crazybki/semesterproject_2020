@@ -333,14 +333,14 @@ body {
 }
 
 .musicontainer .musicontainer__play {
-  margin: 25px 15px 0 0;
+  margin: 25px 25px 0 0;
   opacity: 0.3;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .musicontainer .musicontainer__paused {
-  margin: 25px 25px 0 0;
+  margin: 25px 55px 0 0;
   opacity: 0.3;
   -webkit-transition: 0.5s;
   transition: 0.5s;
