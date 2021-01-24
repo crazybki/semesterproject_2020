@@ -9,6 +9,9 @@ const player2 = document.querySelector('#player2');
 const dice6P1 = document.querySelector('.bordercontainer__rolledsixhuman');
 const dice6P2 = document.querySelector('.bordercontainer__rolledsixmachine');
 let trapMessage = document.querySelector('.message');
+const play = document.querySelector('.musicontainer__play');
+const pause = document.querySelector('.musicontainer__paused');
+const stopMusic = document.querySelector('.musicontainer__stop');
 const numberOfTiles = 32;
 let winnerOfTheGame = [];
 let playersTurn = true;
@@ -27,11 +30,21 @@ const gridTile = ['#grid_6', '#grid_10', '#grid_15', '#grid_20', '#grid_29'];
 
 //
 window.addEventListener('load', (event) => {
-    // gotTheme.play();
+    gotTheme.play();
     diceImg.innerHTML = `<img class="dice__player1" src="/images/1x/dice1_1.png">`;
 });
 
+play.addEventListener('click', playMusic);
 
+function playMusic() {
+    gotTheme.play();
+}
+
+pause.addEventListener('click', musicPaused);
+
+function musicPaused() {
+    gotTheme.pause();
+}
 
 
 diceImg.addEventListener('click', rolleDiceNumber);

@@ -71,6 +71,34 @@
     background-color: $main-color;
 }
 
+.musicontainer {
+    display: flex;
+    justify-content: flex-end;
+
+    .musicontainer__play {
+        margin: 25px 15px 0 0;
+        opacity: 0.3;
+        transition: 0.5s;
+    }
+
+    .musicontainer__paused {
+        margin: 25px 25px 0 0;
+        opacity: 0.3;
+        transition: 0.5s;
+    }
+
+    .musicontainer__play:hover {
+        opacity: 1;
+    }
+
+    .musicontainer__paused:hover {
+        opacity: 1;
+    }
+
+}
+
+
+
 /* -------------Player img, dices, buttons and trap txt----------------*/
 
 
@@ -139,7 +167,7 @@
   background-color: $gridcell-color;
   width: 160px;
   margin: 3px;
-  height: 120px;
+  height: 110px;
 }
 
 .gridcell__colorred {
