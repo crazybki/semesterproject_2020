@@ -88,7 +88,7 @@ function characterIsChosen() {
             player2Chosen(img, name);
             gameStarting();
             setTimeout(() => {
-                window.location.href = "/html/games.html";
+                //       window.location.href = "/html/games.html";
             }, 11000);
         }
     }

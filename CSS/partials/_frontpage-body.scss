@@ -79,15 +79,22 @@ body {
     font-family: $cinzelHeadings;
 }
 
-     .counter {
-        font-size: $heading3;
-        color: $txt-color;
-        position: absolute;
-        right: -250px;
-        top: 80px;
-        width: 350px;
-    }   
+.counter {
+    font-size: $heading3;
+    color: $txt-color;
+    position: absolute;
+    right: -250px;
+    top: 80px;
+    width: 350px;
+}   
 
+.player1 {
+    box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.60);
+}
+
+.player2 {
+    @extend .player1;
+}
 
 /********FRONT-PAGE - Message and counter*****************/
 
@@ -125,8 +132,8 @@ body {
     font-size: $bodytxt;
     color: $txt-color;
     display: inline-block;
-    width: 230px;
-    padding: 20px 45px 0 0;
+    width: 140px;
+    padding: 20px 45px 0 20px;
 }
 
 
@@ -185,6 +192,19 @@ body {
         font-size: $mobileH3;
         left: 270px;
     }
+
+    .counter {
+        font-size: $mobileH3;
+        left: -40px;
+    }
+
+    .face-names {
+        font-size: $bodytxt;
+        color: $txt-color;
+        display: inline-block;
+        width: 140px;
+        padding: 20px 45px 0 0;
+    }
 }
 /********Tablets*****************/
 
@@ -205,7 +225,7 @@ body {
     }
     .pageintro {
         .pageintro-heading {
-            font-size: $mobileH1;
+            font-size: $mobileH2;
         }
     }
 
@@ -215,7 +235,7 @@ body {
 
     .introtxt__message {
         font-size: $mobileBody;
-        margin: 0 10px 0 35px;
+        margin: 0 10px 0 40px;
         text-align: start;
         line-height: 25px;
         width: 350px;
@@ -231,7 +251,7 @@ body {
     }
 
     .player2 {
-        @extend .player1;
+        width: 100px;
     }
 
     .chosencharacter_opponent {
@@ -261,9 +281,57 @@ body {
     }
 
     .chosencharacter_enemy {
-        font-size: $mobileH3;
+        font-size: $bodytxt;
         top: 390px;
+        left: 40px;
     }
 }
+
+@media screen and (max-width: 420px) {
+    .chosencharacter_enemy {
+        left: 65px;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .introtxt__message {
+        margin-left: 12px;
+        line-height: 25px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 376px) { 
+    .introtxt__message {
+        margin-left: 45px;
+    }
+
+    .chosencharacter_enemy {
+        left: 45px;
+    }
+}
+
+
+@media screen and (max-width: 360px) { 
+    .introtxt__message {
+        margin-left: 35px;
+    }
+}
+
+
+@media screen and (max-width: 325px) {
+    .introtxt__message {
+        margin-left: 12px;
+    }
+
+    .introtxt__charactherchosen {
+        font-size: $mobileBody;
+    }
+
+    .chosencharacter_enemy {
+        left: 20px;
+    }
+} 
+
 
 /********Phones*****************/

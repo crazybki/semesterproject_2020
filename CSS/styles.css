@@ -90,6 +90,11 @@ body {
   width: 350px;
 }
 
+.player1, .player2 {
+  -webkit-box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
+          box-shadow: 5px 2px 2px 1px rgba(0, 0, 0, 0.6);
+}
+
 /********FRONT-PAGE - Message and counter*****************/
 /********FRONT-PAGE - Characters*****************/
 .containercharacters {
@@ -123,8 +128,8 @@ body {
   font-size: 21px;
   color: #FFF;
   display: inline-block;
-  width: 230px;
-  padding: 20px 45px 0 0;
+  width: 140px;
+  padding: 20px 45px 0 20px;
 }
 
 .chosenCharaters {
@@ -176,6 +181,17 @@ body {
     font-size: 22px;
     left: 270px;
   }
+  .counter {
+    font-size: 22px;
+    left: -40px;
+  }
+  .face-names {
+    font-size: 21px;
+    color: #FFF;
+    display: inline-block;
+    width: 140px;
+    padding: 20px 45px 0 0;
+  }
 }
 
 /********Tablets*****************/
@@ -194,14 +210,14 @@ body {
     width: 100px;
   }
   .pageintro .pageintro-heading {
-    font-size: 32px;
+    font-size: 26px;
   }
   .introtxt__head2 {
     font-size: 26px;
   }
   .introtxt__message {
     font-size: 16px;
-    margin: 0 10px 0 35px;
+    margin: 0 10px 0 40px;
     text-align: start;
     line-height: 25px;
     width: 350px;
@@ -211,6 +227,9 @@ body {
     font-size: 22px;
   }
   .player1, .player2 {
+    width: 100px;
+  }
+  .player2 {
     width: 100px;
   }
   .chosencharacter_opponent {
@@ -235,8 +254,50 @@ body {
     display: none;
   }
   .chosencharacter_enemy {
-    font-size: 22px;
+    font-size: 21px;
     top: 390px;
+    left: 40px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .chosencharacter_enemy {
+    left: 65px;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .introtxt__message {
+    margin-left: 12px;
+    line-height: 25px;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .introtxt__message {
+    margin-left: 45px;
+  }
+  .chosencharacter_enemy {
+    left: 45px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .introtxt__message {
+    margin-left: 35px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .introtxt__message {
+    margin-left: 12px;
+  }
+  .introtxt__charactherchosen {
+    font-size: 16px;
+  }
+  .chosencharacter_enemy {
+    left: 20px;
   }
 }
 
